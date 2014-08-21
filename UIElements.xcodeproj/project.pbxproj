@@ -19,6 +19,7 @@
 		4FEEBAE719A57EA500420779 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEEBACF19A57EA500420779 /* UIKit.framework */; };
 		4FEEBAEF19A57EA500420779 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBAED19A57EA500420779 /* InfoPlist.strings */; };
 		4FEEBAF119A57EA500420779 /* UIElementsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEEBAF019A57EA500420779 /* UIElementsTests.m */; };
+		4FEEBAFB19A57EBA00420779 /* tc.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBAFA19A57EBA00420779 /* tc.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		4FEEBAEC19A57EA500420779 /* UIElementsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UIElementsTests-Info.plist"; sourceTree = "<group>"; };
 		4FEEBAEE19A57EA500420779 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4FEEBAF019A57EA500420779 /* UIElementsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIElementsTests.m; sourceTree = "<group>"; };
+		4FEEBAFA19A57EBA00420779 /* tc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tc.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		4FEEBAD119A57EA500420779 /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
+				4FEEBAFA19A57EBA00420779 /* tc.json */,
 				4FEEBADA19A57EA500420779 /* KLBAppDelegate.h */,
 				4FEEBADB19A57EA500420779 /* KLBAppDelegate.m */,
 				4FEEBADD19A57EA500420779 /* Images.xcassets */,
@@ -220,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FEEBAFB19A57EBA00420779 /* tc.json in Resources */,
 				4FEEBAD619A57EA500420779 /* InfoPlist.strings in Resources */,
 				4FEEBADE19A57EA500420779 /* Images.xcassets in Resources */,
 			);

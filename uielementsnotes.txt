@@ -1,0 +1,15 @@
+UIElements Exercise
+1 UI Navigation Controller
+1 UI Table View [main controller]
+ - Lists view controllers that can be opened
+	- View Controller will have the following controls:
+		- button, custom button
+		- switch, slider
+		- label, text field, text view (?)
+		- UIPickerView display picker with items
+		- UIImageView
+
+COMBINE WITH THE FOLLOWING EXERCISES
+ Fetch and Parse JSON; JSON Serialization
+ Subclass UITableView
+ Customize UITableViewCell
