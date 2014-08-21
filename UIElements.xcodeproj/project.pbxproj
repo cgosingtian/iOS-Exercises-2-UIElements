@@ -20,6 +20,14 @@
 		4FEEBAEF19A57EA500420779 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBAED19A57EA500420779 /* InfoPlist.strings */; };
 		4FEEBAF119A57EA500420779 /* UIElementsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEEBAF019A57EA500420779 /* UIElementsTests.m */; };
 		4FEEBAFB19A57EBA00420779 /* tc.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBAFA19A57EBA00420779 /* tc.json */; };
+		4FEEBB2019A592C200420779 /* KLBElementsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEEBB1F19A592C200420779 /* KLBElementsTableView.m */; };
+		4FEEBB2519A5932900420779 /* KLBElementsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEEBB2319A5932900420779 /* KLBElementsTableViewController.m */; };
+		4FEEBB2619A5932900420779 /* KLBElementsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBB2419A5932900420779 /* KLBElementsTableViewController.xib */; };
+		4FEEBB2A19A59D9500420779 /* KLBEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEEBB2819A59D9500420779 /* KLBEmployeeViewController.m */; };
+		4FEEBB2B19A59D9500420779 /* KLBEmployeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBB2919A59D9500420779 /* KLBEmployeeViewController.xib */; };
+		4FEEBB2E19A5A13100420779 /* KLBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEEBB2D19A5A13100420779 /* KLBConstants.m */; };
+		4FEEBB3219A5A5EA00420779 /* KLBEmployeeStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEEBB3119A5A5EA00420779 /* KLBEmployeeStore.m */; };
+		4FEEBB3519A5A91200420779 /* KLBJSONController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEEBB3419A5A91200420779 /* KLBJSONController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +58,20 @@
 		4FEEBAEE19A57EA500420779 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4FEEBAF019A57EA500420779 /* UIElementsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIElementsTests.m; sourceTree = "<group>"; };
 		4FEEBAFA19A57EBA00420779 /* tc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tc.json; sourceTree = "<group>"; };
+		4FEEBB1E19A592C200420779 /* KLBElementsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBElementsTableView.h; sourceTree = "<group>"; };
+		4FEEBB1F19A592C200420779 /* KLBElementsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBElementsTableView.m; sourceTree = "<group>"; };
+		4FEEBB2219A5932900420779 /* KLBElementsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBElementsTableViewController.h; sourceTree = "<group>"; };
+		4FEEBB2319A5932900420779 /* KLBElementsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBElementsTableViewController.m; sourceTree = "<group>"; };
+		4FEEBB2419A5932900420779 /* KLBElementsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KLBElementsTableViewController.xib; sourceTree = "<group>"; };
+		4FEEBB2719A59D9500420779 /* KLBEmployeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBEmployeeViewController.h; sourceTree = "<group>"; };
+		4FEEBB2819A59D9500420779 /* KLBEmployeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBEmployeeViewController.m; sourceTree = "<group>"; };
+		4FEEBB2919A59D9500420779 /* KLBEmployeeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KLBEmployeeViewController.xib; sourceTree = "<group>"; };
+		4FEEBB2C19A5A13100420779 /* KLBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBConstants.h; sourceTree = "<group>"; };
+		4FEEBB2D19A5A13100420779 /* KLBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBConstants.m; sourceTree = "<group>"; };
+		4FEEBB3019A5A5EA00420779 /* KLBEmployeeStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBEmployeeStore.h; sourceTree = "<group>"; };
+		4FEEBB3119A5A5EA00420779 /* KLBEmployeeStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBEmployeeStore.m; sourceTree = "<group>"; };
+		4FEEBB3319A5A91200420779 /* KLBJSONController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBJSONController.h; sourceTree = "<group>"; };
+		4FEEBB3419A5A91200420779 /* KLBJSONController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBJSONController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +131,16 @@
 		4FEEBAD119A57EA500420779 /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
+				4FEEBB2F19A5A5DC00420779 /* Models */,
+				4FEEBB2119A592C500420779 /* Views */,
+				4FEEBB1D19A5917300420779 /* Controllers */,
 				4FEEBAFA19A57EBA00420779 /* tc.json */,
 				4FEEBADA19A57EA500420779 /* KLBAppDelegate.h */,
 				4FEEBADB19A57EA500420779 /* KLBAppDelegate.m */,
 				4FEEBADD19A57EA500420779 /* Images.xcassets */,
 				4FEEBAD219A57EA500420779 /* Supporting Files */,
+				4FEEBB2C19A5A13100420779 /* KLBConstants.h */,
+				4FEEBB2D19A5A13100420779 /* KLBConstants.m */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -145,6 +172,39 @@
 				4FEEBAED19A57EA500420779 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4FEEBB1D19A5917300420779 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4FEEBB2219A5932900420779 /* KLBElementsTableViewController.h */,
+				4FEEBB2319A5932900420779 /* KLBElementsTableViewController.m */,
+				4FEEBB2419A5932900420779 /* KLBElementsTableViewController.xib */,
+				4FEEBB2719A59D9500420779 /* KLBEmployeeViewController.h */,
+				4FEEBB2819A59D9500420779 /* KLBEmployeeViewController.m */,
+				4FEEBB2919A59D9500420779 /* KLBEmployeeViewController.xib */,
+				4FEEBB3319A5A91200420779 /* KLBJSONController.h */,
+				4FEEBB3419A5A91200420779 /* KLBJSONController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4FEEBB2119A592C500420779 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4FEEBB1E19A592C200420779 /* KLBElementsTableView.h */,
+				4FEEBB1F19A592C200420779 /* KLBElementsTableView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4FEEBB2F19A5A5DC00420779 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4FEEBB3019A5A5EA00420779 /* KLBEmployeeStore.h */,
+				4FEEBB3119A5A5EA00420779 /* KLBEmployeeStore.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +284,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FEEBAFB19A57EBA00420779 /* tc.json in Resources */,
+				4FEEBB2619A5932900420779 /* KLBElementsTableViewController.xib in Resources */,
 				4FEEBAD619A57EA500420779 /* InfoPlist.strings in Resources */,
 				4FEEBADE19A57EA500420779 /* Images.xcassets in Resources */,
+				4FEEBB2B19A59D9500420779 /* KLBEmployeeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +307,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FEEBADC19A57EA500420779 /* KLBAppDelegate.m in Sources */,
+				4FEEBB2A19A59D9500420779 /* KLBEmployeeViewController.m in Sources */,
+				4FEEBB2519A5932900420779 /* KLBElementsTableViewController.m in Sources */,
+				4FEEBB2019A592C200420779 /* KLBElementsTableView.m in Sources */,
+				4FEEBB3219A5A5EA00420779 /* KLBEmployeeStore.m in Sources */,
+				4FEEBB3519A5A91200420779 /* KLBJSONController.m in Sources */,
 				4FEEBAD819A57EA500420779 /* main.m in Sources */,
+				4FEEBB2E19A5A13100420779 /* KLBConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +362,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -332,7 +400,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;

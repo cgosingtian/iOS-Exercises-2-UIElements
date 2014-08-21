@@ -7,6 +7,7 @@
 //
 
 #import "KLBAppDelegate.h"
+#import "KLBElementsTableViewController.h"
 
 @implementation KLBAppDelegate
 
@@ -14,6 +15,15 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    KLBElementsTableViewController *etvc = [[KLBElementsTableViewController alloc] init];
+    
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:etvc];
+    
+    [self.window setRootViewController:nc];
+    [etvc release];
+    [nc release];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

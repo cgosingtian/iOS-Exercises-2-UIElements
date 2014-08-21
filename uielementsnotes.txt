@@ -9,6 +9,9 @@ UIElements Exercise
 		- UIPickerView display picker with items
 		- UIImageView
 
+Each View Controller will show an Employee
+
+
 COMBINE WITH THE FOLLOWING EXERCISES
  Fetch and Parse JSON; JSON Serialization
  Subclass UITableView
