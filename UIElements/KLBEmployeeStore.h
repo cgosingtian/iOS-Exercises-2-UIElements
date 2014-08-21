@@ -15,5 +15,6 @@
 - (void)setAllItems:(NSMutableDictionary *)dictionary;
 - (void)addItem:(id)object forKey:(NSString *)key;
 - (void)removeItemWithKey:(NSString *)key;
+- (NSDictionary *)employeeWithName:(NSString *)name section:(NSString *)section;
 
 @end

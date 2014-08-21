@@ -7,6 +7,7 @@
 //
 
 #import "KLBEmployeeStore.h"
+#import "KLBConstants.h"
 
 @interface KLBEmployeeStore ()
 
@@ -55,6 +56,19 @@
 
 - (void)removeItemWithKey:(NSString *)key {
     [_employeeSections removeObjectForKey:key];
+}
+
+- (NSDictionary *)employeeWithName:(NSString *)name section:(NSString *)section {
+    for (NSString *key in _employeeSections) {
+        if ([section isEqualToString:key]) {
+            for (NSDictionary *employee in [_employeeSections objectForKey:key]) {
+                if ([name isEqualToString:[employee objectForKey:KLB_NAME_KEY]]) {
+                    return employee;
+                }
+            }
+        }
+    }
+    return nil;
 }
 
 @end

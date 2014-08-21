@@ -16,3 +16,14 @@ COMBINE WITH THE FOLLOWING EXERCISES
  Fetch and Parse JSON; JSON Serialization
  Subclass UITableView
  Customize UITableViewCell
+
+
+0 - 0 [0]
+1 - 1 [0]
+2     [1]
+3     [2]
+4     [3]
+5 - 2 [0]
+6     [1]
+7     [2]
+8     [3]

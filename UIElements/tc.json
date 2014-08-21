@@ -35,5 +35,37 @@
                         "description": "Unit Head",
                         "image": ""
                         }
+                        ],
+    "Studio 1": [
+                        {
+                        "name": "Keith",
+                        "rating": 43,
+                        "isTrainee": false,
+                        "description": "iOS",
+                        "image": ""
+                        },
+                        {
+                        "name": "Lemuel",
+                        "rating": 0,
+                        "isTrainee": false,
+                        "description": "Android",
+                        "image": ""
+                        },
+                        {
+                        "name": "Romz",
+                        "rating": 69,
+                        "isTrainee": false,
+                        "description": "PHP",
+                        "image": ""
+                        }
+                        ],
+    "Systems Admin": [
+                        {
+                        "name": "Tan",
+                        "rating": 100,
+                        "isTrainee": false,
+                        "description": "PHP",
+                        "image": ""
+                        }
                         ]
 }

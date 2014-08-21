@@ -15,6 +15,8 @@
 @interface KLBElementsTableViewController ()
 
 @property (nonatomic,retain) NSMutableArray *viewList;
+@property (nonatomic,retain) NSMutableArray *sections;
+@property (nonatomic,retain) NSMutableArray *sectionContent;
 
 @end
 
@@ -26,6 +28,14 @@
     
     if (!_viewList) {
         _viewList = [[NSMutableArray alloc] init];
+    }
+    
+    if (!_sections) {
+        _sections = [[NSMutableArray alloc] init];
+    }
+    
+    if (!_sectionContent) {
+        _sectionContent = [[NSMutableArray alloc] init];
     }
     
     [self setTitle:@"Employee Records"];
@@ -45,6 +55,8 @@
     
     //just use loadedDictionary for convenience
     for (NSString *key in loadedDictionary) {
+        [_sections addObject:key];
+        int entries = 0;
         for (NSDictionary *employee in [loadedDictionary objectForKey:key]) {
             //Create KLBEmployeeViewController for each employee
             NSString *empDesc = [employee objectForKey:KLB_DESCRIPTION_KEY];
@@ -58,11 +70,13 @@
             
             KLBEmployeeViewController *evc = [[KLBEmployeeViewController alloc] initWithNibName:nil bundle:nil employeeImage:empImage employeeName:empName employeeTrainee:isTrainee employeeRating:empRating employeeDescription:empDesc];
             [evc setTitle:empName];
-            NSLog(@"EVC TITLE: %@", [evc title]);
-            if (!evc) NSLog(@"EVC NIL :(");
             [_viewList addObject:evc];
             [evc release];
+            entries++;
+            NSLog(@"ENTRIES IN FOR: %d",entries);
         }
+        NSLog(@"ENTRIES OUTSIDE FOR: %d",entries);
+        [_sectionContent addObject:[NSNumber numberWithInt:entries]];
     }
 }
 
@@ -77,26 +91,36 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return _sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return _viewList.count;
+    return [[_sectionContent objectAtIndex:section] intValue];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
  
-    KLBElementsTableViewController *evc = [_viewList objectAtIndex:indexPath.row];
-    cell.textLabel.text = [evc title];
-//    [evc release];
- 
+    int index = indexPath.row;
+    if (indexPath.section > 0) {
+        for (int i = indexPath.section; i > 0; i--) {
+            index += [[_sectionContent objectAtIndex:indexPath.section-i]intValue];
+        }
+    }
+    KLBElementsTableViewController *evc = [_viewList objectAtIndex:index];
+    NSDictionary *dictionary = [[KLBEmployeeStore sharedStore] employeeWithName:[evc title] section:[_sections objectAtIndex:indexPath.section]];
+    cell.textLabel.text = [dictionary objectForKey:KLB_NAME_KEY];
+    NSLog(@"[s%d,r%d] Name: %@, Section: %@",indexPath.section,indexPath.row,[dictionary objectForKey:KLB_NAME_KEY], [_sections objectAtIndex:indexPath.section]);
+    
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [_sections objectAtIndex:section];
+}
 
 /*
  // Override to support conditional editing of the table view.
@@ -142,7 +166,13 @@
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    KLBEmployeeViewController *evc = [_viewList objectAtIndex:indexPath.row];
+    int index = indexPath.row;
+    if (indexPath.section > 0) {
+        for (int i = indexPath.section; i > 0; i--) {
+            index += [[_sectionContent objectAtIndex:indexPath.section-i]intValue];
+        }
+    }
+    KLBEmployeeViewController *evc = [_viewList objectAtIndex:index];
  
     [self.navigationController pushViewController:evc animated:YES];
 }
