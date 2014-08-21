@@ -9,7 +9,7 @@
 #import "KLBEmployeeViewController.h"
 #import "KLBConstants.h"
 
-@interface KLBEmployeeViewController ()
+@interface KLBEmployeeViewController () <UITextFieldDelegate,UITextViewDelegate>
 @property (retain, nonatomic) IBOutlet UIImageView *employeeImage;
 @property (retain, nonatomic) IBOutlet UITextField *employeeNameLabel;
 @property (retain, nonatomic) IBOutlet UISwitch *employeeTraineeSwitch;
@@ -93,5 +93,25 @@
     _employeeRatingSlider.value = _originalRating;
     _employeeTraineeSwitch.on = _originalIsTrainee;
     _employeeDescriptionTextView.text = _originalDescription;
+}
+- (IBAction)dismissResponders:(id)sender {
+    [[self view] endEditing:YES];
+}
+
+#pragma mark - UITextFieldDelegate Protocol
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+#pragma mark - UITextViewDelegate Protocol
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    CGRect frame = [textView frame];
+    frame.origin.y /= 3.0;
+    [textView setFrame:frame];
+}
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    CGRect frame = [textView frame];
+    frame.origin.y *= 3.0;
+    [textView setFrame:frame];
 }
 @end
