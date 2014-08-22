@@ -62,26 +62,20 @@
     for (NSString *key in loadedDictionary) {
         [_sections addObject:key];
         int entries = 0;
+        int index = 0;
         for (NSDictionary *employee in [loadedDictionary objectForKey:key]) {
-            //Create KLBEmployeeViewController for each employee
-            NSString *empDesc = [employee objectForKey:KLB_DESCRIPTION_KEY];
-            NSString *empImageString = [employee objectForKey:KLB_IMAGE_KEY];
-            NSData *imageData = [[NSData alloc] initWithBase64EncodedString:empImageString options:0];
-            UIImage *empImage = [[UIImage alloc] initWithData:imageData];
-            NSNumber *isTraineeNum = [employee objectForKey:KLB_ISTRAINEE_KEY];
-            bool isTrainee = [isTraineeNum boolValue];
-            NSString *empName = [employee objectForKey:KLB_NAME_KEY];
-            float empRating = [[employee objectForKey:KLB_RATING_KEY] floatValue];
-            NSString *empLang = [employee objectForKey:KLB_LANGUAGE_KEY];
-            
-            KLBEmployeeViewController *evc = [[KLBEmployeeViewController alloc] initWithNibName:nil bundle:nil employeeImage:empImage employeeName:empName employeeTrainee:isTrainee employeeRating:empRating employeeDescription:empDesc employeeLanguage:empLang];
-            [evc setTitle:empName];
+            KLBEmployeeViewController *evc = [[KLBEmployeeViewController alloc] initWithNibName:nil bundle:nil section:key index:index];
             [_viewList addObject:evc];
             [evc release];
             entries++;
+            index++;
         }
         [_sectionContent addObject:[NSNumber numberWithInt:entries]];
     }
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -121,11 +115,13 @@
             index += [[_sectionContent objectAtIndex:indexPath.section-i]intValue];
         }
     }
-    KLBElementsTableViewController *evc = [_viewList objectAtIndex:index];
-    NSDictionary *dictionary = [[KLBEmployeeStore sharedStore] employeeWithName:[evc title] section:[_sections objectAtIndex:indexPath.section]];
+    KLBEmployeeViewController *evc = [_viewList objectAtIndex:index];
+    NSDictionary *dictionary = [[KLBEmployeeStore sharedStore] employeeWithSection:[evc section] index:[evc index]];
 //    cell.nameLabel.text = [dictionary objectForKey:KLB_NAME_KEY];
 //    cell.sectionLabel.text = [_sections objectAtIndex:indexPath.section];
 //    cell.ratingLabel.text = [dictionary objectForKey:KLB_RATING_KEY];
+    
+    NSLog(@"name: %@",[dictionary objectForKey:KLB_NAME_KEY]);
     
     cell.textLabel.text = [dictionary objectForKey:KLB_NAME_KEY];
     

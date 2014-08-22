@@ -10,8 +10,10 @@
 
 @interface KLBEmployeeViewController : UIViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil employeeImage:(UIImage *)image employeeName:(NSString *)name employeeTrainee:(bool)isTrainee employeeRating:(float)rating employeeDescription:(NSString *)description employeeLanguage:(NSString *)language;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil section:(NSString *)section index:(NSInteger)index;
 
 - (void)setLanguageButtonText:(NSString *)str;
+- (NSString *)section;
+- (int)index;
 
 @end

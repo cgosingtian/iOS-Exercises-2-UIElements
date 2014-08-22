@@ -13,8 +13,11 @@
 +(instancetype)sharedStore;
 - (NSDictionary *)allItems;
 - (void)setAllItems:(NSMutableDictionary *)dictionary;
-- (void)addItem:(id)object forKey:(NSString *)key;
-- (void)removeItemWithKey:(NSString *)key;
-- (NSDictionary *)employeeWithName:(NSString *)name section:(NSString *)section;
+- (void)addSection:(id)object forKey:(NSString *)key;
+- (void)removeSectionWithKey:(NSString *)key;
+- (NSString *)keyFromSectionIndex:(NSInteger)index;
+- (NSMutableDictionary *)employeeWithName:(NSString *)name section:(NSString *)section;
+- (NSMutableDictionary *)employeeWithSection:(NSString *)section index:(NSInteger)index;
+- (void)setEmployeeWithDictionary:(NSMutableDictionary *)employee section:(NSString *)section index:(NSInteger)index;
 
 @end

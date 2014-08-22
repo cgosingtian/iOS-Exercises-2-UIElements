@@ -50,18 +50,18 @@
     _employeeSections = [dictionary copy];
 }
 
-- (void)addItem:(id)object forKey:(NSString *)key {
+- (void)addSection:(id)object forKey:(NSString *)key {
     [_employeeSections setObject:object forKey:key];
 }
 
-- (void)removeItemWithKey:(NSString *)key {
+- (void)removeSectionWithKey:(NSString *)key {
     [_employeeSections removeObjectForKey:key];
 }
 
-- (NSDictionary *)employeeWithName:(NSString *)name section:(NSString *)section {
+- (NSMutableDictionary *)employeeWithName:(NSString *)name section:(NSString *)section {
     for (NSString *key in _employeeSections) {
         if ([section isEqualToString:key]) {
-            for (NSDictionary *employee in [_employeeSections objectForKey:key]) {
+            for (NSMutableDictionary *employee in [_employeeSections objectForKey:key]) {
                 if ([name isEqualToString:[employee objectForKey:KLB_NAME_KEY]]) {
                     return employee;
                 }
@@ -71,4 +71,19 @@
     return nil;
 }
 
+- (NSMutableDictionary *)employeeWithSection:(NSString *)section index:(NSInteger)index {
+    for (NSString *key in _employeeSections) {
+        if ([section isEqualToString:key]) {
+            return [[_employeeSections objectForKey:key] objectAtIndex:index];
+        }
+    }
+    return nil;
+}
+
+- (void)setEmployeeWithDictionary:(NSDictionary *)employee section:(NSString *)section index:(NSInteger)index {
+    @try {
+    [[_employeeSections objectForKey:section] setObject:employee atIndex:index];
+    }
+    @catch(NSException *e) { NSLog(@"%@",e); }
+}
 @end

@@ -22,7 +22,7 @@
     
     NSData *JSONData = [[NSData alloc] initWithContentsOfURL:fileURL];
     
-    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:nil];
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingMutableContainers error:nil];
     [JSONData release];
     return dictionary;
 }

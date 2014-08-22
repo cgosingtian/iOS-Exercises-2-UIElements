@@ -11,6 +11,7 @@
 		4FD4D66419A5E8FD005DED9C /* KLBEmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD4D66219A5E8FD005DED9C /* KLBEmployeeTableViewCell.xib */; };
 		4FD6B30419A6D35D003939D3 /* KLBLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD6B30219A6D35D003939D3 /* KLBLanguageViewController.m */; };
 		4FD6B30519A6D35D003939D3 /* KLBLanguageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD6B30319A6D35D003939D3 /* KLBLanguageViewController.xib */; };
+		4FD6B30819A6FB4A003939D3 /* defaultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FD6B30719A6FB4A003939D3 /* defaultImage.png */; };
 		4FEEBACC19A57EA500420779 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEEBACB19A57EA500420779 /* Foundation.framework */; };
 		4FEEBACE19A57EA500420779 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEEBACD19A57EA500420779 /* CoreGraphics.framework */; };
 		4FEEBAD019A57EA500420779 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEEBACF19A57EA500420779 /* UIKit.framework */; };
@@ -50,6 +51,7 @@
 		4FD6B30119A6D35D003939D3 /* KLBLanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBLanguageViewController.h; sourceTree = "<group>"; };
 		4FD6B30219A6D35D003939D3 /* KLBLanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBLanguageViewController.m; sourceTree = "<group>"; };
 		4FD6B30319A6D35D003939D3 /* KLBLanguageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KLBLanguageViewController.xib; sourceTree = "<group>"; };
+		4FD6B30719A6FB4A003939D3 /* defaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = defaultImage.png; path = Resources/defaultImage.png; sourceTree = "<group>"; };
 		4FEEBAC819A57EA500420779 /* UIElements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIElements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEEBACB19A57EA500420779 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FEEBACD19A57EA500420779 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -105,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FD6B30619A6FB3E003939D3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4FD6B30719A6FB4A003939D3 /* defaultImage.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		4FEEBABF19A57EA500420779 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 		4FEEBAD119A57EA500420779 /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
+				4FD6B30619A6FB3E003939D3 /* Resources */,
 				4FEEBB2F19A5A5DC00420779 /* Models */,
 				4FEEBB2119A592C500420779 /* Views */,
 				4FEEBB1D19A5917300420779 /* Controllers */,
@@ -297,6 +308,7 @@
 				4FEEBAFB19A57EBA00420779 /* tc.json in Resources */,
 				4FEEBB2619A5932900420779 /* KLBElementsTableViewController.xib in Resources */,
 				4FEEBAD619A57EA500420779 /* InfoPlist.strings in Resources */,
+				4FD6B30819A6FB4A003939D3 /* defaultImage.png in Resources */,
 				4FEEBADE19A57EA500420779 /* Images.xcassets in Resources */,
 				4FEEBB2B19A59D9500420779 /* KLBEmployeeViewController.xib in Resources */,
 				4FD4D66419A5E8FD005DED9C /* KLBEmployeeTableViewCell.xib in Resources */,
