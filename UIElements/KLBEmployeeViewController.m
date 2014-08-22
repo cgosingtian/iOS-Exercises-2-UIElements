@@ -18,6 +18,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *revertChangesButton;
 @property (retain, nonatomic) IBOutlet UILabel *ratingSliderValueLabel;
 @property (retain, nonatomic) IBOutlet UILabel *traineeSwitchValueLabel;
+@property (retain, nonatomic) IBOutlet UISegmentedControl *clearDescNameSegmentedControl;
 
 @property (nonatomic,retain) NSString *originalName;
 @property (nonatomic,retain) UIImage *originalImage;
@@ -43,6 +44,7 @@
     [_originalName release];
     [_ratingSliderValueLabel release];
     [_traineeSwitchValueLabel release];
+    [_clearDescNameSegmentedControl release];
     [super dealloc];
 }
 
@@ -57,6 +59,7 @@
         _originalDescription = description;
         
         //[image release];
+        
     }
     return self;
 }
@@ -113,6 +116,18 @@
 }
 - (IBAction)ratingSliderValueChanged:(id)sender {
     _ratingSliderValueLabel.text = [NSString stringWithFormat:@"%f",_employeeRatingSlider.value];
+}
+- (IBAction)clearDescNameSegmentedControlHandler:(id)sender {
+    switch ([_clearDescNameSegmentedControl selectedSegmentIndex]) {
+        case 0: {
+            _employeeDescriptionTextView.text = @"";
+            break;
+        }
+        case 1: {
+            _employeeNameLabel.text = @"";
+            break;
+        }
+    }
 }
 - (IBAction)dismissResponders:(id)sender {
     [[self view] endEditing:YES];

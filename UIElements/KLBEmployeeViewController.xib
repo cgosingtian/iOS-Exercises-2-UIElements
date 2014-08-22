@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KLBEmployeeViewController">
             <connections>
+                <outlet property="clearDescNameSegmentedControl" destination="lht-cc-cIw" id="mle-v7-BHt"/>
                 <outlet property="employeeDescriptionTextView" destination="vwe-tX-g1H" id="IOG-4d-tq3"/>
                 <outlet property="employeeImage" destination="jMv-D7-4Kp" id="a4U-TT-csC"/>
                 <outlet property="employeeNameLabel" destination="y92-tK-txn" id="Nmf-CP-Ecz"/>
@@ -117,6 +118,17 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lht-cc-cIw">
+                    <rect key="frame" x="20" y="439" width="154" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <segments>
+                        <segment title="Clear Desc"/>
+                        <segment title="Clear Name"/>
+                    </segments>
+                    <connections>
+                        <action selector="clearDescNameSegmentedControlHandler:" destination="-1" eventType="valueChanged" id="1Pw-oN-3zN"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

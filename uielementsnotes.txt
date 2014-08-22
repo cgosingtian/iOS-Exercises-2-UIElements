@@ -31,11 +31,11 @@ COMBINE WITH THE FOLLOWING EXERCISES
 "4. Add simple method / functions to the UIElements:
 
 _x_＊buttons: display text upon click
-___＊uiswitch: switch on/off text display
-___＊uislider: print value of slider
+_x_＊uiswitch: switch on/off text display
+_x_＊uislider: print value of slider
 _x_＊textfield: type text & display, close keyboard
 ___＊picker: select picker item & display text
 ___＊images: thumbnail image, click to view full image
-___＊segmented/toolbar/tab: change view on click
+_x_＊segmented/toolbar/tab: change view on click
 ___＊alert: pop-up alert & display clicked value (ok/cancel/others)
 ___＊actionsheet: display clicked value"
