@@ -10,7 +10,7 @@
 #import "KLBConstants.h"
 #import "KLBLanguageViewController.h"
 
-@interface KLBEmployeeViewController () <UITextFieldDelegate,UITextViewDelegate>
+@interface KLBEmployeeViewController () <UITextFieldDelegate,UITextViewDelegate,UIAlertViewDelegate>
 @property (retain, nonatomic) IBOutlet UIImageView *employeeImage;
 @property (retain, nonatomic) IBOutlet UITextField *employeeNameLabel;
 @property (retain, nonatomic) IBOutlet UISwitch *employeeTraineeSwitch;
@@ -29,12 +29,16 @@
 @property (nonatomic,retain) NSString *originalDescription;
 @property (nonatomic,retain) NSString *originalLanguage;
 
+@property (nonatomic) bool keyboardIsShown;
+
 @end
 
 @implementation KLBEmployeeViewController
 
 #pragma mark - Dealloc
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     [_employeeImage release];
     [_employeeNameLabel release];
     [_employeeTraineeSwitch release];
@@ -66,6 +70,10 @@
         
         //[image release];
         
+        _keyboardIsShown = false;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShown) name:UIKeyboardWillShowNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHidden) name:UIKeyboardWillHideNotification object:nil];
     }
     return self;
 }
@@ -106,16 +114,8 @@
 
 #pragma mark - IBActions
 - (IBAction)revertChanges:(id)sender {
-    _employeeImage.image = _originalImage;
-    _employeeNameLabel.text = _originalName;
-    _employeeRatingSlider.value = _originalRating;
-    _ratingSliderValueLabel.text = [NSString stringWithFormat:@"%f",_originalRating];
-    _employeeTraineeSwitch.on = _originalIsTrainee;
-    if (_originalIsTrainee) {
-        _traineeSwitchValueLabel.text = @"YES";
-    } else _traineeSwitchValueLabel.text = @"NO";
-    _employeeDescriptionTextView.text = _originalDescription;
-    [_languageButton setTitle:_originalLanguage forState:UIControlStateNormal];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Revert Changes" message:@"Confirm to revert all changes." delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    [alert show];
 }
 - (IBAction)traineeSwitchValueChanged:(id)sender {
     if (_employeeTraineeSwitch.on) {
@@ -144,7 +144,36 @@
     [self presentViewController:lvc animated:YES completion:nil];
 }
 - (IBAction)dismissResponders:(id)sender {
-    [[self view] endEditing:YES];
+    if (_keyboardIsShown) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hide Keyboard" message:@"Finished editing? Confirm to hide keyboard." delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        [alert show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if ([alertView.title isEqualToString:@"Hide Keyboard"]) {
+        if (buttonIndex == 0) { // NO
+            // do nothing
+        } else if (buttonIndex == 1) { // YES
+            [[self view] endEditing:YES];
+        }
+    } else if([alertView.title isEqualToString:@"Revert Changes"]) {
+        if (buttonIndex == 0) { // NO
+                                // do nothing
+        } else if (buttonIndex == 1) { // YES
+            _employeeImage.image = _originalImage;
+            _employeeNameLabel.text = _originalName;
+            _employeeRatingSlider.value = _originalRating;
+            _ratingSliderValueLabel.text = [NSString stringWithFormat:@"%f",_originalRating];
+            _employeeTraineeSwitch.on = _originalIsTrainee;
+            if (_originalIsTrainee) {
+                _traineeSwitchValueLabel.text = @"YES";
+            } else _traineeSwitchValueLabel.text = @"NO";
+            _employeeDescriptionTextView.text = _originalDescription;
+            [_languageButton setTitle:_originalLanguage forState:UIControlStateNormal];
+        }
+    }
+    [alertView release];
 }
 
 #pragma mark - UITextFieldDelegate Protocol
@@ -167,6 +196,13 @@
 #pragma mark - Utilities
 - (void)setLanguageButtonText:(NSString *)str {
     [_languageButton setTitle:str forState:UIControlStateNormal];
+}
+
+- (void)keyboardShown {
+    _keyboardIsShown = true;
+}
+- (void)keyboardHidden {
+    _keyboardIsShown = false;
 }
 
 @end

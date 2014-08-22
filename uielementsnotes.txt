@@ -34,7 +34,7 @@ _x_＊buttons: display text upon click
 _x_＊uiswitch: switch on/off text display
 _x_＊uislider: print value of slider
 _x_＊textfield: type text & display, close keyboard
-___＊picker: select picker item & display text
+_x_＊picker: select picker item & display text
 ___＊images: thumbnail image, click to view full image
 _x_＊segmented/toolbar/tab: change view on click
 ___＊alert: pop-up alert & display clicked value (ok/cancel/others)
