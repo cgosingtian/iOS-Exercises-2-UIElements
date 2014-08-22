@@ -8,6 +8,7 @@
 
 #import "KLBEmployeeViewController.h"
 #import "KLBConstants.h"
+#import "KLBLanguageViewController.h"
 
 @interface KLBEmployeeViewController () <UITextFieldDelegate,UITextViewDelegate>
 @property (retain, nonatomic) IBOutlet UIImageView *employeeImage;
@@ -19,12 +20,14 @@
 @property (retain, nonatomic) IBOutlet UILabel *ratingSliderValueLabel;
 @property (retain, nonatomic) IBOutlet UILabel *traineeSwitchValueLabel;
 @property (retain, nonatomic) IBOutlet UISegmentedControl *clearDescNameSegmentedControl;
+@property (retain, nonatomic) IBOutlet UIButton *languageButton;
 
 @property (nonatomic,retain) NSString *originalName;
 @property (nonatomic,retain) UIImage *originalImage;
 @property (nonatomic) bool originalIsTrainee;
 @property (nonatomic) float originalRating;
 @property (nonatomic,retain) NSString *originalDescription;
+@property (nonatomic,retain) NSString *originalLanguage;
 
 @end
 
@@ -45,11 +48,13 @@
     [_ratingSliderValueLabel release];
     [_traineeSwitchValueLabel release];
     [_clearDescNameSegmentedControl release];
+    [_languageButton release];
+    [_originalLanguage release];
     [super dealloc];
 }
 
 #pragma mark - Initializers
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil employeeImage:(UIImage *)image employeeName:(NSString *)name employeeTrainee:(bool)isTrainee employeeRating:(float)rating employeeDescription:(NSString *)description {
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil employeeImage:(UIImage *)image employeeName:(NSString *)name employeeTrainee:(bool)isTrainee employeeRating:(float)rating employeeDescription:(NSString *)description employeeLanguage:(NSString *)language {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _originalImage = image;
@@ -57,6 +62,7 @@
         _originalRating = rating;
         _originalIsTrainee = isTrainee;
         _originalDescription = description;
+        _originalLanguage = language;
         
         //[image release];
         
@@ -88,6 +94,7 @@
         _traineeSwitchValueLabel.text = @"YES";
     } else _traineeSwitchValueLabel.text = @"NO";
     _employeeDescriptionTextView.text = _originalDescription;
+    [_languageButton setTitle:_originalLanguage forState:UIControlStateNormal];
 }
 
 #pragma mark - Memory Management
@@ -108,6 +115,7 @@
         _traineeSwitchValueLabel.text = @"YES";
     } else _traineeSwitchValueLabel.text = @"NO";
     _employeeDescriptionTextView.text = _originalDescription;
+    [_languageButton setTitle:_originalLanguage forState:UIControlStateNormal];
 }
 - (IBAction)traineeSwitchValueChanged:(id)sender {
     if (_employeeTraineeSwitch.on) {
@@ -129,6 +137,12 @@
         }
     }
 }
+- (IBAction)changeLanguage:(id)sender {
+    KLBLanguageViewController *lvc = [[KLBLanguageViewController alloc] init];
+    [lvc setInitialValue:_languageButton.titleLabel.text];
+
+    [self presentViewController:lvc animated:YES completion:nil];
+}
 - (IBAction)dismissResponders:(id)sender {
     [[self view] endEditing:YES];
 }
@@ -149,4 +163,10 @@
     frame.origin.y *= 3.0;
     [textView setFrame:frame];
 }
+
+#pragma mark - Utilities
+- (void)setLanguageButtonText:(NSString *)str {
+    [_languageButton setTitle:str forState:UIControlStateNormal];
+}
+
 @end

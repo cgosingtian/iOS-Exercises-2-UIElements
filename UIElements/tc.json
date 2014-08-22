@@ -4,36 +4,41 @@
                         "name": "Chase",
                         "rating": 99,
                         "isTrainee": true,
-                        "description": "iOS",
-                        "image": ""
+                        "description": "Gosingtian",
+                        "image": "",
+                        "language": "iOS"
                         },
                         {
                         "name": "RB",
                         "rating": 80,
                         "isTrainee": true,
-                        "description": "iOS",
-                        "image": ""
+                        "description": "De Guzman",
+                        "image": "",
+                        "language": "iOS"
                         },
                         {
                         "name": "Jay",
                         "rating": 60,
                         "isTrainee": true,
-                        "description": "PHP",
-                        "image": ""
+                        "description": "Co",
+                        "image": "",
+                        "language": "PHP"
                         },
                         {
                         "name": "Jay Ar",
                         "rating": 20,
                         "isTrainee": true,
-                        "description": "Android",
-                        "image": ""
+                        "description": "Bautista",
+                        "image": "",
+                        "language": "Android"
                         },
                         {
                         "name": "Charm",
                         "rating": 100,
                         "isTrainee": false,
                         "description": "Unit Head",
-                        "image": ""
+                        "image": "",
+                        "language": "iOS"
                         }
                         ],
     "Studio 1": [
@@ -41,22 +46,25 @@
                         "name": "Keith",
                         "rating": 43,
                         "isTrainee": false,
-                        "description": "iOS",
-                        "image": ""
+                        "description": "Samson",
+                        "image": "",
+                        "language": "iOS"
                         },
                         {
                         "name": "Lemuel",
                         "rating": 0,
                         "isTrainee": false,
-                        "description": "Android",
-                        "image": ""
+                        "description": "Castro",
+                        "image": "",
+                        "language": "Android"
                         },
                         {
                         "name": "Romz",
                         "rating": 69,
                         "isTrainee": false,
-                        "description": "PHP",
-                        "image": ""
+                        "description": "Pogi",
+                        "image": "",
+                        "language": "PHP"
                         }
                         ],
     "Systems Admin": [
@@ -64,8 +72,9 @@
                         "name": "Tan",
                         "rating": 100,
                         "isTrainee": false,
-                        "description": "PHP",
-                        "image": ""
+                        "description": "Tananan",
+                        "image": "",
+                        "language": "PHP"
                         }
                         ]
 }

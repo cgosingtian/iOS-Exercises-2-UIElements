@@ -16,6 +16,7 @@ NSString *const KLB_IMAGE_KEY = @"image";
 NSString *const KLB_ISTRAINEE_KEY = @"isTrainee";
 NSString *const KLB_NAME_KEY = @"name";
 NSString *const KLB_RATING_KEY = @"rating";
+NSString *const KLB_LANGUAGE_KEY = @"language";
 
 NSString *const KLB_EMPLOYEE_TABLE_VIEW_CELL = @"KLBEmployeeTableViewCell";
 

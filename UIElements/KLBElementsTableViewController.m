@@ -72,8 +72,9 @@
             bool isTrainee = [isTraineeNum boolValue];
             NSString *empName = [employee objectForKey:KLB_NAME_KEY];
             float empRating = [[employee objectForKey:KLB_RATING_KEY] floatValue];
+            NSString *empLang = [employee objectForKey:KLB_LANGUAGE_KEY];
             
-            KLBEmployeeViewController *evc = [[KLBEmployeeViewController alloc] initWithNibName:nil bundle:nil employeeImage:empImage employeeName:empName employeeTrainee:isTrainee employeeRating:empRating employeeDescription:empDesc];
+            KLBEmployeeViewController *evc = [[KLBEmployeeViewController alloc] initWithNibName:nil bundle:nil employeeImage:empImage employeeName:empName employeeTrainee:isTrainee employeeRating:empRating employeeDescription:empDesc employeeLanguage:empLang];
             [evc setTitle:empName];
             [_viewList addObject:evc];
             [evc release];

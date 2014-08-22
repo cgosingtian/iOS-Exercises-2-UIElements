@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4FD4D66319A5E8FD005DED9C /* KLBEmployeeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD4D66119A5E8FD005DED9C /* KLBEmployeeTableViewCell.m */; };
 		4FD4D66419A5E8FD005DED9C /* KLBEmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD4D66219A5E8FD005DED9C /* KLBEmployeeTableViewCell.xib */; };
+		4FD6B30419A6D35D003939D3 /* KLBLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD6B30219A6D35D003939D3 /* KLBLanguageViewController.m */; };
+		4FD6B30519A6D35D003939D3 /* KLBLanguageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD6B30319A6D35D003939D3 /* KLBLanguageViewController.xib */; };
 		4FEEBACC19A57EA500420779 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEEBACB19A57EA500420779 /* Foundation.framework */; };
 		4FEEBACE19A57EA500420779 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEEBACD19A57EA500420779 /* CoreGraphics.framework */; };
 		4FEEBAD019A57EA500420779 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEEBACF19A57EA500420779 /* UIKit.framework */; };
@@ -45,6 +47,9 @@
 		4FD4D66019A5E8FD005DED9C /* KLBEmployeeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBEmployeeTableViewCell.h; sourceTree = "<group>"; };
 		4FD4D66119A5E8FD005DED9C /* KLBEmployeeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBEmployeeTableViewCell.m; sourceTree = "<group>"; };
 		4FD4D66219A5E8FD005DED9C /* KLBEmployeeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KLBEmployeeTableViewCell.xib; sourceTree = "<group>"; };
+		4FD6B30119A6D35D003939D3 /* KLBLanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBLanguageViewController.h; sourceTree = "<group>"; };
+		4FD6B30219A6D35D003939D3 /* KLBLanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBLanguageViewController.m; sourceTree = "<group>"; };
+		4FD6B30319A6D35D003939D3 /* KLBLanguageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KLBLanguageViewController.xib; sourceTree = "<group>"; };
 		4FEEBAC819A57EA500420779 /* UIElements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIElements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEEBACB19A57EA500420779 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FEEBACD19A57EA500420779 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -185,6 +190,9 @@
 				4FEEBB2719A59D9500420779 /* KLBEmployeeViewController.h */,
 				4FEEBB2819A59D9500420779 /* KLBEmployeeViewController.m */,
 				4FEEBB2919A59D9500420779 /* KLBEmployeeViewController.xib */,
+				4FD6B30119A6D35D003939D3 /* KLBLanguageViewController.h */,
+				4FD6B30219A6D35D003939D3 /* KLBLanguageViewController.m */,
+				4FD6B30319A6D35D003939D3 /* KLBLanguageViewController.xib */,
 				4FEEBB3319A5A91200420779 /* KLBJSONController.h */,
 				4FEEBB3419A5A91200420779 /* KLBJSONController.m */,
 			);
@@ -292,6 +300,7 @@
 				4FEEBADE19A57EA500420779 /* Images.xcassets in Resources */,
 				4FEEBB2B19A59D9500420779 /* KLBEmployeeViewController.xib in Resources */,
 				4FD4D66419A5E8FD005DED9C /* KLBEmployeeTableViewCell.xib in Resources */,
+				4FD6B30519A6D35D003939D3 /* KLBLanguageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +322,7 @@
 				4FEEBADC19A57EA500420779 /* KLBAppDelegate.m in Sources */,
 				4FEEBB2A19A59D9500420779 /* KLBEmployeeViewController.m in Sources */,
 				4FEEBB2519A5932900420779 /* KLBElementsTableViewController.m in Sources */,
+				4FD6B30419A6D35D003939D3 /* KLBLanguageViewController.m in Sources */,
 				4FD4D66319A5E8FD005DED9C /* KLBEmployeeTableViewCell.m in Sources */,
 				4FEEBB3219A5A5EA00420779 /* KLBEmployeeStore.m in Sources */,
 				4FEEBB3519A5A91200420779 /* KLBJSONController.m in Sources */,
