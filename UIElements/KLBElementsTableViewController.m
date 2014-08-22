@@ -11,6 +11,7 @@
 #import "KLBEmployeeStore.h"
 #import "KLBEmployeeViewController.h"
 #import "KLBConstants.h"
+#import "KLBEmployeeTableViewCell.h"
 
 @interface KLBElementsTableViewController ()
 
@@ -40,7 +41,11 @@
     
     [self setTitle:@"Employee Records"];
     
-    [[self tableView] registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    [[self tableView] registerClass:[UITableViewCell class] forCellReuseIdentifier:KLB_EMPLOYEE_TABLE_VIEW_CELL];
+    
+//    [[self tableView] registerClass:[KLBEmployeeTableViewCell class] forCellReuseIdentifier:KLB_EMPLOYEE_TABLE_VIEW_CELL];
+//    UINib *nib = [UINib nibWithNibName:KLB_EMPLOYEE_TABLE_VIEW_CELL bundle:nil];
+//    [self.tableView registerNib:nib forCellReuseIdentifier:KLB_EMPLOYEE_TABLE_VIEW_CELL];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -73,9 +78,7 @@
             [_viewList addObject:evc];
             [evc release];
             entries++;
-            NSLog(@"ENTRIES IN FOR: %d",entries);
         }
-        NSLog(@"ENTRIES OUTSIDE FOR: %d",entries);
         [_sectionContent addObject:[NSNumber numberWithInt:entries]];
     }
 }
@@ -102,7 +105,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
+    //KLBEmployeeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:KLB_EMPLOYEE_TABLE_VIEW_CELL forIndexPath:indexPath];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:KLB_EMPLOYEE_TABLE_VIEW_CELL forIndexPath:indexPath];
+    
+//    if (cell == nil)
+//    {
+//        cell = [[KLBEmployeeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:KLB_EMPLOYEE_TABLE_VIEW_CELL];
+//    }
  
     int index = indexPath.row;
     if (indexPath.section > 0) {
@@ -112,8 +122,11 @@
     }
     KLBElementsTableViewController *evc = [_viewList objectAtIndex:index];
     NSDictionary *dictionary = [[KLBEmployeeStore sharedStore] employeeWithName:[evc title] section:[_sections objectAtIndex:indexPath.section]];
+//    cell.nameLabel.text = [dictionary objectForKey:KLB_NAME_KEY];
+//    cell.sectionLabel.text = [_sections objectAtIndex:indexPath.section];
+//    cell.ratingLabel.text = [dictionary objectForKey:KLB_RATING_KEY];
+    
     cell.textLabel.text = [dictionary objectForKey:KLB_NAME_KEY];
-    NSLog(@"[s%d,r%d] Name: %@, Section: %@",indexPath.section,indexPath.row,[dictionary objectForKey:KLB_NAME_KEY], [_sections objectAtIndex:indexPath.section]);
     
     return cell;
 }

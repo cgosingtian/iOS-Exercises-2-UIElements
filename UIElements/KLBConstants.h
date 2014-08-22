@@ -17,6 +17,8 @@ extern NSString *const KLB_ISTRAINEE_KEY;
 extern NSString *const KLB_NAME_KEY;
 extern NSString *const KLB_RATING_KEY;
 
+extern NSString *const KLB_EMPLOYEE_TABLE_VIEW_CELL;
+
 @interface KLBConstants : NSObject
 
 @end

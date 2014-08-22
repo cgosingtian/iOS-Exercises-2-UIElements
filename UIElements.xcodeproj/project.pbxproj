@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FD4D66319A5E8FD005DED9C /* KLBEmployeeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD4D66119A5E8FD005DED9C /* KLBEmployeeTableViewCell.m */; };
+		4FD4D66419A5E8FD005DED9C /* KLBEmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD4D66219A5E8FD005DED9C /* KLBEmployeeTableViewCell.xib */; };
 		4FEEBACC19A57EA500420779 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEEBACB19A57EA500420779 /* Foundation.framework */; };
 		4FEEBACE19A57EA500420779 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEEBACD19A57EA500420779 /* CoreGraphics.framework */; };
 		4FEEBAD019A57EA500420779 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEEBACF19A57EA500420779 /* UIKit.framework */; };
@@ -20,7 +22,6 @@
 		4FEEBAEF19A57EA500420779 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBAED19A57EA500420779 /* InfoPlist.strings */; };
 		4FEEBAF119A57EA500420779 /* UIElementsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEEBAF019A57EA500420779 /* UIElementsTests.m */; };
 		4FEEBAFB19A57EBA00420779 /* tc.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBAFA19A57EBA00420779 /* tc.json */; };
-		4FEEBB2019A592C200420779 /* KLBElementsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEEBB1F19A592C200420779 /* KLBElementsTableView.m */; };
 		4FEEBB2519A5932900420779 /* KLBElementsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEEBB2319A5932900420779 /* KLBElementsTableViewController.m */; };
 		4FEEBB2619A5932900420779 /* KLBElementsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FEEBB2419A5932900420779 /* KLBElementsTableViewController.xib */; };
 		4FEEBB2A19A59D9500420779 /* KLBEmployeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEEBB2819A59D9500420779 /* KLBEmployeeViewController.m */; };
@@ -41,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4FD4D66019A5E8FD005DED9C /* KLBEmployeeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBEmployeeTableViewCell.h; sourceTree = "<group>"; };
+		4FD4D66119A5E8FD005DED9C /* KLBEmployeeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBEmployeeTableViewCell.m; sourceTree = "<group>"; };
+		4FD4D66219A5E8FD005DED9C /* KLBEmployeeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KLBEmployeeTableViewCell.xib; sourceTree = "<group>"; };
 		4FEEBAC819A57EA500420779 /* UIElements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIElements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEEBACB19A57EA500420779 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4FEEBACD19A57EA500420779 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,8 +62,6 @@
 		4FEEBAEE19A57EA500420779 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4FEEBAF019A57EA500420779 /* UIElementsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIElementsTests.m; sourceTree = "<group>"; };
 		4FEEBAFA19A57EBA00420779 /* tc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tc.json; sourceTree = "<group>"; };
-		4FEEBB1E19A592C200420779 /* KLBElementsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBElementsTableView.h; sourceTree = "<group>"; };
-		4FEEBB1F19A592C200420779 /* KLBElementsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBElementsTableView.m; sourceTree = "<group>"; };
 		4FEEBB2219A5932900420779 /* KLBElementsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBElementsTableViewController.h; sourceTree = "<group>"; };
 		4FEEBB2319A5932900420779 /* KLBElementsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBElementsTableViewController.m; sourceTree = "<group>"; };
 		4FEEBB2419A5932900420779 /* KLBElementsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KLBElementsTableViewController.xib; sourceTree = "<group>"; };
@@ -192,8 +194,6 @@
 		4FEEBB2119A592C500420779 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4FEEBB1E19A592C200420779 /* KLBElementsTableView.h */,
-				4FEEBB1F19A592C200420779 /* KLBElementsTableView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -203,6 +203,9 @@
 			children = (
 				4FEEBB3019A5A5EA00420779 /* KLBEmployeeStore.h */,
 				4FEEBB3119A5A5EA00420779 /* KLBEmployeeStore.m */,
+				4FD4D66019A5E8FD005DED9C /* KLBEmployeeTableViewCell.h */,
+				4FD4D66119A5E8FD005DED9C /* KLBEmployeeTableViewCell.m */,
+				4FD4D66219A5E8FD005DED9C /* KLBEmployeeTableViewCell.xib */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				4FEEBAD619A57EA500420779 /* InfoPlist.strings in Resources */,
 				4FEEBADE19A57EA500420779 /* Images.xcassets in Resources */,
 				4FEEBB2B19A59D9500420779 /* KLBEmployeeViewController.xib in Resources */,
+				4FD4D66419A5E8FD005DED9C /* KLBEmployeeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +313,7 @@
 				4FEEBADC19A57EA500420779 /* KLBAppDelegate.m in Sources */,
 				4FEEBB2A19A59D9500420779 /* KLBEmployeeViewController.m in Sources */,
 				4FEEBB2519A5932900420779 /* KLBElementsTableViewController.m in Sources */,
-				4FEEBB2019A592C200420779 /* KLBElementsTableView.m in Sources */,
+				4FD4D66319A5E8FD005DED9C /* KLBEmployeeTableViewCell.m in Sources */,
 				4FEEBB3219A5A5EA00420779 /* KLBEmployeeStore.m in Sources */,
 				4FEEBB3519A5A91200420779 /* KLBJSONController.m in Sources */,
 				4FEEBAD819A57EA500420779 /* main.m in Sources */,
@@ -510,6 +514,7 @@
 				4FEEBAF619A57EA500420779 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FEEBAF719A57EA500420779 /* Build configuration list for PBXNativeTarget "UIElementsTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +523,7 @@
 				4FEEBAF919A57EA500420779 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
