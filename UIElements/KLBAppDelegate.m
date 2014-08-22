@@ -10,6 +10,7 @@
 #import "KLBElementsTableViewController.h"
 #import "KLBJSONController.h"
 #import "KLBEmployeeStore.h"
+#import "KLBWebViewController.h"
 
 @implementation KLBAppDelegate
 
@@ -21,6 +22,10 @@
     KLBElementsTableViewController *etvc = [[KLBElementsTableViewController alloc] init];
     
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:etvc];
+    
+    KLBWebViewController *wvc = [[KLBWebViewController alloc] init];
+    
+    [nc addChildViewController:wvc];
     
     [self.window setRootViewController:nc];
     [etvc release];
