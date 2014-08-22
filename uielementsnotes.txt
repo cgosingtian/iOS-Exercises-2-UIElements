@@ -27,3 +27,15 @@ COMBINE WITH THE FOLLOWING EXERCISES
 6     [1]
 7     [2]
 8     [3]
+
+"4. Add simple method / functions to the UIElements:
+
+_x_＊buttons: display text upon click
+___＊uiswitch: switch on/off text display
+___＊uislider: print value of slider
+_x_＊textfield: type text & display, close keyboard
+___＊picker: select picker item & display text
+___＊images: thumbnail image, click to view full image
+___＊segmented/toolbar/tab: change view on click
+___＊alert: pop-up alert & display clicked value (ok/cancel/others)
+___＊actionsheet: display clicked value"

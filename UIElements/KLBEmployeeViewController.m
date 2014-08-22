@@ -16,6 +16,8 @@
 @property (retain, nonatomic) IBOutlet UISlider *employeeRatingSlider;
 @property (retain, nonatomic) IBOutlet UITextView *employeeDescriptionTextView;
 @property (retain, nonatomic) IBOutlet UIButton *revertChangesButton;
+@property (retain, nonatomic) IBOutlet UILabel *ratingSliderValueLabel;
+@property (retain, nonatomic) IBOutlet UILabel *traineeSwitchValueLabel;
 
 @property (nonatomic,retain) NSString *originalName;
 @property (nonatomic,retain) UIImage *originalImage;
@@ -39,6 +41,8 @@
     [_originalImage release];
     [_originalDescription release];
     [_originalName release];
+    [_ratingSliderValueLabel release];
+    [_traineeSwitchValueLabel release];
     [super dealloc];
 }
 
@@ -75,7 +79,11 @@
     _employeeRatingSlider.minimumValue = KLB_MINIMUM_RATING;
     _employeeRatingSlider.maximumValue = KLB_MAXIMUM_RATING;
     [_employeeRatingSlider setValue:_originalRating];
+    _ratingSliderValueLabel.text = [NSString stringWithFormat:@"%f",_originalRating];
     _employeeTraineeSwitch.on = (bool)_originalIsTrainee;
+    if (_originalIsTrainee) {
+        _traineeSwitchValueLabel.text = @"YES";
+    } else _traineeSwitchValueLabel.text = @"NO";
     _employeeDescriptionTextView.text = _originalDescription;
 }
 
@@ -91,8 +99,20 @@
     _employeeImage.image = _originalImage;
     _employeeNameLabel.text = _originalName;
     _employeeRatingSlider.value = _originalRating;
+    _ratingSliderValueLabel.text = [NSString stringWithFormat:@"%f",_originalRating];
     _employeeTraineeSwitch.on = _originalIsTrainee;
+    if (_originalIsTrainee) {
+        _traineeSwitchValueLabel.text = @"YES";
+    } else _traineeSwitchValueLabel.text = @"NO";
     _employeeDescriptionTextView.text = _originalDescription;
+}
+- (IBAction)traineeSwitchValueChanged:(id)sender {
+    if (_employeeTraineeSwitch.on) {
+        _traineeSwitchValueLabel.text = @"YES";
+    } else _traineeSwitchValueLabel.text = @"NO";
+}
+- (IBAction)ratingSliderValueChanged:(id)sender {
+    _ratingSliderValueLabel.text = [NSString stringWithFormat:@"%f",_employeeRatingSlider.value];
 }
 - (IBAction)dismissResponders:(id)sender {
     [[self view] endEditing:YES];
