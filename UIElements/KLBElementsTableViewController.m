@@ -54,8 +54,7 @@
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     //load JSON
-    KLBJSONController *jsonController = [[KLBJSONController alloc] init];
-    NSDictionary *loadedDictionary = [jsonController loadJSONfromFile:@"tc"];
+    NSDictionary *loadedDictionary = [KLBJSONController loadJSONfromFile:@"tc"];
     [[KLBEmployeeStore sharedStore] setAllItems:[loadedDictionary mutableCopy]];
     
     //just use loadedDictionary for convenience
@@ -69,6 +68,10 @@
             [evc release];
             entries++;
             index++;
+            
+//            for (NSString *key in [employee allKeys]) {
+//                NSLog(@"%@ - %@",key,[employee[key] class]);
+//            }
         }
         [_sectionContent addObject:[NSNumber numberWithInt:entries]];
     }

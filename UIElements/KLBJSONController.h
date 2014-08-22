@@ -10,6 +10,7 @@
 
 @interface KLBJSONController : NSObject
 
-- (NSDictionary *) loadJSONfromFile:(NSString *)file;
++ (NSDictionary *) loadJSONfromFile:(NSString *)file;
++ (void) saveJSONtoFile:(NSString *)file contents:(NSDictionary *)dictionary;
 
 @end

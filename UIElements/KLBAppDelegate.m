@@ -8,6 +8,8 @@
 
 #import "KLBAppDelegate.h"
 #import "KLBElementsTableViewController.h"
+#import "KLBJSONController.h"
+#import "KLBEmployeeStore.h"
 
 @implementation KLBAppDelegate
 
@@ -39,6 +41,9 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    NSLog(@"SAVING");
+    NSDictionary *dictionary = [[KLBEmployeeStore sharedStore] allItems];
+    [KLBJSONController saveJSONtoFile:@"tc" contents:dictionary];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
