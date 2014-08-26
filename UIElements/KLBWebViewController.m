@@ -11,6 +11,8 @@
 @interface KLBWebViewController () <UIWebViewDelegate>
 @property (retain, nonatomic) IBOutlet UIWebView *webView;
 
+@property (nonatomic) void (^loadURLWithBlock)(NSURL *URL);
+
 @end
 
 @implementation KLBWebViewController
@@ -20,22 +22,15 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    NSLog(@"web view did load");
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _webView.scalesPageToFit = YES;
-    NSString *requestString = @"https://sites.google.com/a/klab.com/ph_intra/";
-    
-    _URL = [NSURL URLWithString:requestString];
-    
-    [self loadWebViewWithURL:_URL];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,6 +53,32 @@
         [_webView loadRequest:req];
     }
 }
+
+#pragma mark - Button Actions
+- (IBAction)loadWithBlock:(id)sender {
+    NSString *requestString = @"https://sites.google.com/a/klab.com/ph_intra/";
+    
+    _URL = [NSURL URLWithString:requestString];
+    
+    _loadURLWithBlock = ^(NSURL *URL) {
+        _URL = URL;
+        if (_URL)
+        {
+            NSURLRequest *req = [[NSURLRequest alloc] initWithURL:_URL];
+            [_webView loadRequest:req];
+        }
+    };
+    
+    _loadURLWithBlock(_URL);
+}
+- (IBAction)loadNormally:(id)sender {
+    NSString *requestString = @"https://sites.google.com/a/klab.com/ph_intra/";
+    
+    _URL = [NSURL URLWithString:requestString];
+    
+    [self loadWebViewWithURL:_URL];
+}
+
 
 #pragma mark - UIWebViewDelegate Protocol
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
