@@ -8,7 +8,7 @@
 
 #import "KLBWebViewController.h"
 
-@interface KLBWebViewController ()
+@interface KLBWebViewController () <UIWebViewDelegate>
 @property (retain, nonatomic) IBOutlet UIWebView *webView;
 
 @end
@@ -20,16 +20,18 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
+    NSLog(@"web view did load");
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _webView.scalesPageToFit = YES;
-    NSString *requestString = @"http://www.google.com";
+    NSString *requestString = @"https://sites.google.com/a/klab.com/ph_intra/";
     
     _URL = [NSURL URLWithString:requestString];
     
@@ -55,5 +57,12 @@
         NSURLRequest *req = [[NSURLRequest alloc] initWithURL:_URL];
         [_webView loadRequest:req];
     }
+}
+
+#pragma mark - UIWebViewDelegate Protocol
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Load Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    
+    [errorAlert show];
 }
 @end

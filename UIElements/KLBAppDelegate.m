@@ -23,10 +23,6 @@
     
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:etvc];
     
-    KLBWebViewController *wvc = [[KLBWebViewController alloc] init];
-    
-    [nc addChildViewController:wvc];
-    
     [self.window setRootViewController:nc];
     [etvc release];
     [nc release];

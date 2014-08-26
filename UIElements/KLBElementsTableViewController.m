@@ -13,6 +13,10 @@
 #import "KLBConstants.h"
 #import "KLBEmployeeTableViewCell.h"
 
+// quick hack to make this controller appear; the
+// coupling of this and the WebViewController is not optimal
+#import "KLBWebViewController.h"
+
 @interface KLBElementsTableViewController ()
 
 @property (nonatomic,retain) NSMutableArray *viewList;
@@ -75,6 +79,13 @@
         }
         [_sectionContent addObject:[NSNumber numberWithInt:entries]];
     }
+    
+    
+    NSLog(@"add web button");
+    //display the web view controller by pressing a button
+    UIBarButtonItem *webButton = [[UIBarButtonItem alloc] initWithTitle:@"Web" style:UIBarButtonItemStylePlain target:self action:@selector(showWebView)];
+    
+    [[self navigationItem] setRightBarButtonItem:webButton];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -123,8 +134,6 @@
 //    cell.nameLabel.text = [dictionary objectForKey:KLB_NAME_KEY];
 //    cell.sectionLabel.text = [_sections objectAtIndex:indexPath.section];
 //    cell.ratingLabel.text = [dictionary objectForKey:KLB_RATING_KEY];
-    
-    NSLog(@"name: %@",[dictionary objectForKey:KLB_NAME_KEY]);
     
     cell.textLabel.text = [dictionary objectForKey:KLB_NAME_KEY];
     
@@ -188,6 +197,12 @@
     KLBEmployeeViewController *evc = [_viewList objectAtIndex:index];
  
     [self.navigationController pushViewController:evc animated:YES];
+}
+
+#pragma mark - Web View Controller
+- (void)showWebView {
+    KLBWebViewController *wvc = [[KLBWebViewController alloc] init];
+    [self.navigationController pushViewController:wvc animated:NO];
 }
 
 
