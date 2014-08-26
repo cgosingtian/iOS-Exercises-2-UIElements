@@ -45,11 +45,12 @@
     
     [self setTitle:@"Employee Records"];
     
-    [[self tableView] registerClass:[UITableViewCell class] forCellReuseIdentifier:KLB_EMPLOYEE_TABLE_VIEW_CELL];
-    
-//    [[self tableView] registerClass:[KLBEmployeeTableViewCell class] forCellReuseIdentifier:KLB_EMPLOYEE_TABLE_VIEW_CELL];
-//    UINib *nib = [UINib nibWithNibName:KLB_EMPLOYEE_TABLE_VIEW_CELL bundle:nil];
-//    [self.tableView registerNib:nib forCellReuseIdentifier:KLB_EMPLOYEE_TABLE_VIEW_CELL];
+//    [[self tableView] registerClass:[UITableViewCell class] forCellReuseIdentifier:@"KLBEmployeeTableViewCell"];
+
+    UINib *nib = [UINib nibWithNibName:KLB_EMPLOYEE_TABLE_VIEW_CELL bundle:nil];
+    // Register this NIB, which contains the cell
+    [self.tableView registerNib:nib
+         forCellReuseIdentifier:KLB_EMPLOYEE_TABLE_VIEW_CELL];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -114,9 +115,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //KLBEmployeeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:KLB_EMPLOYEE_TABLE_VIEW_CELL forIndexPath:indexPath];
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:KLB_EMPLOYEE_TABLE_VIEW_CELL forIndexPath:indexPath];
+    KLBEmployeeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:KLB_EMPLOYEE_TABLE_VIEW_CELL forIndexPath:indexPath];
     
 //    if (cell == nil)
 //    {
@@ -131,11 +130,12 @@
     }
     KLBEmployeeViewController *evc = [_viewList objectAtIndex:index];
     NSDictionary *dictionary = [[KLBEmployeeStore sharedStore] employeeWithSection:[evc section] index:[evc index]];
-//    cell.nameLabel.text = [dictionary objectForKey:KLB_NAME_KEY];
-//    cell.sectionLabel.text = [_sections objectAtIndex:indexPath.section];
-//    cell.ratingLabel.text = [dictionary objectForKey:KLB_RATING_KEY];
+    cell.nameLabel.text = [dictionary objectForKey:KLB_NAME_KEY];
+    cell.sectionLabel.text = [_sections objectAtIndex:indexPath.section];
+    NSNumber *num = [dictionary objectForKey:KLB_RATING_KEY];
+    cell.ratingLabel.text = [NSString stringWithFormat:@"%@",num];
     
-    cell.textLabel.text = [dictionary objectForKey:KLB_NAME_KEY];
+//    cell.textLabel.text = [dictionary objectForKey:KLB_NAME_KEY];
     
     return cell;
 }
